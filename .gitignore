@@ -1,1 +1,11 @@
 /build/
+# ---> Java
+*.class
+
+# Mobile Tools for Java (J2ME)
+# .mtj.tmp/
+
+#Package files#
+#*.jar
+*.war
+*.ear
