@@ -63,7 +63,7 @@ public class ServletSeConnecter extends HttpServlet {
 		
 
 				
-		UtilisateurManager.getInstance().ajouterUtilsateur();
+		//UtilisateurManager.getInstance().ajouterUtilsateur();
 		
 		
 		
