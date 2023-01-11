@@ -1,12 +1,6 @@
-package fr.eni.ecole.appliBo;
+package fr.eni.ecole.encheres.bo;
 
 import java.time.LocalDate;
-
-import fr.eni.ecole.bo.ArticleVendu;
-import fr.eni.ecole.bo.Categorie;
-import fr.eni.ecole.bo.Enchere;
-import fr.eni.ecole.bo.Retrait;
-import fr.eni.ecole.bo.Utilisateur;
 
 
 public class AppliTestBo {
