@@ -26,12 +26,12 @@
   
   <servlet>
     <description>Créer son profil</description>
-    <servlet-name>Profil</servlet-name>
-    <jsp-file>/WEB-INF/jsp/MonProfil.jsp</jsp-file>
+    <servlet-name>CreerCompte</servlet-name>
+    <jsp-file>/WEB-INF/jsp/EnregistrementUtilisateur.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Profil</servlet-name>
-    <url-pattern>/monprofil.html</url-pattern>
+    <servlet-name>CreerCompte</servlet-name>
+    <url-pattern>/EnregistrementUtilisateur.html</url-pattern>
   </servlet-mapping>
   
   

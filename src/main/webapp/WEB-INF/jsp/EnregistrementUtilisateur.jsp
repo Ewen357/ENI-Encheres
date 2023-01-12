@@ -4,17 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Mon profil</title>
+<title>Enregistrement</title>
 </head>
 <body>
-<h1>Mon profil</h1>
+<h1>Creer compte</h1>
 
 
 
 	
 	
 	
-	<form action="<%=request.getContextPath()%>/ServletSeConnecter" method="post" class="creerProfil">
+	<form action="<%=request.getContextPath()%>/ServletCreerCompte" method="post" class="creerProfil">
   <div class="">
     <label for="pseudo">Pseudo : </label>
     <input type="text" name="pseudo" id="pseudo" required placeholder="toto" >
@@ -25,7 +25,7 @@
   </div>
   <div class="">
     <label for="prénom">Prénom : </label>
-    <input type="text" name="prénom" id="prénom" required placeholder="marie" >
+    <input type="text" name="prenom" id="prenom" required placeholder="marie" >
   </div>
   <div class="">
     <label for="email">Email : </label>

@@ -13,7 +13,7 @@ import fr.eni.ecole.encheres.exception.BusinessException;
 
 public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 
-	private static final String INSERT_UTILISATEUR = "INSERT INTO UTILISATEUR pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+	private static final String INSERT_UTILISATEUR = "INSERT INTO UTILISATEUR (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String SELECT_UTILISATEUR_BY_ID = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur FROM UTILISATEUR WHERE no_utilisateur = ? ";
 	private static final String SELECT_UTILISATEUR_BY_PSEUDO = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur FROM UTILISATEUR WHERE pseudo = ? ";
 	private static final String SELECT_ALL_UTILISATEUR = "SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville FROM UTILISATEUR";
