@@ -3,6 +3,7 @@ package fr.eni.ecole.encheres.servlet;
 import java.io.IOException;
 
 import fr.eni.ecole.encheres.bll.UtilisateurManager;
+import fr.eni.ecole.encheres.bo.Utilisateur;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -48,9 +49,9 @@ public class ServletSeConnecter extends HttpServlet {
 		String codePostal = null;
 		String ville = null;
 		String motDePasse = null;
-		String confirmation = null;
 		
-	;	pseudo = request.getParameter("pseudo");
+		
+		pseudo = request.getParameter("pseudo");
 		nom = request.getParameter("nom");
 		prenom = request.getParameter("prenom");
 		email = request.getParameter("email");
@@ -59,15 +60,14 @@ public class ServletSeConnecter extends HttpServlet {
 		codePostal = request.getParameter("codePostal");
 		ville = request.getParameter("ville");
 		motDePasse = request.getParameter("motDePasse");
-		confirmation = request.getParameter("confirmation");
-		
 
-				
-		//UtilisateurManager.getInstance().ajouterUtilsateur();
+		
+Utilisateur utilisateur = new Utilisateur (pseudo, nom, prenom, email, tel, rue, codePostal, ville, motDePasse);
+		 UtilisateurManager utilisateurManager  = new UtilisateurManager(utilisateur);
 		
 		
 		
-		System.out.println(pseudo + nom + prenom + email + tel + rue + codePostal + ville + motDePasse + confirmation);
+		System.out.println(pseudo + nom + prenom + email + tel + rue + codePostal + ville + motDePasse );
 		//doGet(request, response);
 	}
 	}

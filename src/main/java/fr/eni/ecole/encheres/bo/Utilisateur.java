@@ -28,6 +28,7 @@ public class Utilisateur implements Serializable {
 	private String telephone;
 	private String rue;
 	private String codePostal;
+	private String ville;
 	private String motDePasse;
 	private int credit;
 	private boolean administrateur;
@@ -57,7 +58,7 @@ public class Utilisateur implements Serializable {
 	 */
 	
 	public Utilisateur(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone,
-			String rue, String codePostal, String motDePasse, int credit, boolean administrateur) {
+			String rue, String codePostal, String ville, String motDePasse, int credit, boolean administrateur) {
 		super();
 		this.setNoUtilisateur(noUtilisateur); 
 		this.setPseudo(pseudo);
@@ -67,6 +68,7 @@ public class Utilisateur implements Serializable {
 		this.setTelephone(telephone);
 		this.setRue(rue);
 		this.setCodePostal(codePostal);
+		this.setVille(ville);
 		this.setMotDePasse(motDePasse);
 		this.setCredit(credit);
 		this.setAdministrateur(administrateur);
@@ -75,11 +77,82 @@ public class Utilisateur implements Serializable {
 	// *****GETTERS*****//
 
 
+	/**
+	 * Constructeur 
+	 * @param noUtilisateur
+	 * @param pseudo
+	 * @param nom
+	 * @param prenom
+	 * @param email
+	 * @param telephone
+	 * @param rue
+	 * @param codePostal
+	 * @param ville
+	 * @param motDePasse
+	 */
+	public Utilisateur(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone,
+			String rue, String codePostal, String ville, String motDePasse) {
+		super();
+		this.noUtilisateur = noUtilisateur;
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+		this.motDePasse = motDePasse;
+	}
+
+	/**
+	 * Constructeur 
+	 * @param noUtilisateur
+	 * @param pseudo
+	 * @param nom
+	 * @param prenom
+	 * @param email
+	 * @param telephone
+	 * @param rue
+	 * @param codePostal
+	 * @param ville
+	 */
+	public Utilisateur( String pseudo, String nom, String prenom, String email, String telephone,
+			String rue, String codePostal, String ville, String motDePasse) {
+		super();
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codePostal = codePostal;
+		this.ville = ville;
+		this.motDePasse = motDePasse;
+	}
+
 	public int getNoUtilisateur() {
 
 		return noUtilisateur;
 	}
 	
+	/**
+	* Getter pour ville.
+	 * @return the ville
+	
+	 */
+	public String getVille() {
+		return ville;
+	}
+
+	/**
+	 * Setter pour ville.
+	 * @param ville the ville to set
+	 */
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
 	public String getPseudo() {
 
 		return pseudo;
@@ -189,12 +262,10 @@ public class Utilisateur implements Serializable {
 		this.administrateur = administrateur;
 	}
 
-
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("UtilisateurBo [noUtilisateur=");
+		builder.append("Utilisateur [noUtilisateur=");
 		builder.append(noUtilisateur);
 		builder.append(", pseudo=");
 		builder.append(pseudo);
@@ -210,6 +281,8 @@ public class Utilisateur implements Serializable {
 		builder.append(rue);
 		builder.append(", codePostal=");
 		builder.append(codePostal);
+		builder.append(", ville=");
+		builder.append(ville);
 		builder.append(", motDePasse=");
 		builder.append(motDePasse);
 		builder.append(", credit=");
@@ -219,5 +292,7 @@ public class Utilisateur implements Serializable {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
+
+
 }

@@ -1,5 +1,7 @@
 package fr.eni.ecole.encheres.dal;
 
+import fr.eni.ecole.encheres.bo.Utilisateur;
+
 public interface DAOUtilisateur  {
 
 	
@@ -11,7 +13,7 @@ public Utilisateur selectById (int noUtilisateur)throws DALException;
 	
 public Utilisateur updateById (Utilisateur utilisateur )throws DALException;
 
-public Utilisateur deleteById (int noUtilisateur )throws DALException;
+public void deleteById (int noUtilisateur )throws DALException;
 
 
 }
