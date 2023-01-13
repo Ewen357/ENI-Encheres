@@ -15,7 +15,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mssql-jdbc-7.2.2.jre11.jar"/>
-	<classpathentry kind="lib" path="C:/Users/emalaquin2022/Downloads/javax.servlet-api-4.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/emalaquin2022/Downloads/javax.servlet-api-4.0.0-javadoc.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
