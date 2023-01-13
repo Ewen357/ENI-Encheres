@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
   <display-name>ENI-Encheres</display-name>
   <welcome-file-list>
-    <welcome-file>ServletAccueil</welcome-file>
+    <welcome-file>ServletCreerCompte</welcome-file>
   </welcome-file-list>
   <servlet>
     <description>Page d'accueil pour se connecter</description>
@@ -32,6 +32,16 @@
   <servlet-mapping>
     <servlet-name>CreerCompte</servlet-name>
     <url-pattern>/EnregistrementUtilisateur.html</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description>Ajouter un article</description>
+    <servlet-name>NouvelleVente</servlet-name>
+    <jsp-file>/WEB-INF/jsp/NouvelleVente.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NouvelleVente</servlet-name>
+    <url-pattern>/AjoutArticle.html</url-pattern>
   </servlet-mapping>
   
   
