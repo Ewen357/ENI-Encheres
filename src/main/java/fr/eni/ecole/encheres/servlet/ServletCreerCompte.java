@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import fr.eni.ecole.encheres.bll.UtilisateurManager;
 import fr.eni.ecole.encheres.bo.Utilisateur;
-import fr.eni.ecole.encheres.dal.DALException;
+import fr.eni.ecole.encheres.exception.BusinessException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -54,7 +54,7 @@ public class ServletCreerCompte extends HttpServlet {
 		
 		try {
 			mgt.insertUtilisateur(utilisateur);
-		} catch (DALException e) {
+		} catch (BusinessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

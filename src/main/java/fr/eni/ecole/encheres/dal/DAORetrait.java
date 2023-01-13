@@ -8,6 +8,9 @@ public interface DAORetrait  {
 	
 public void insertRetrait (Retrait retrait) throws BusinessException;
 
+public Retrait selectBynoArticle(int noArticle) throws BusinessException;
+
+
 //public Utilisateur selectByPseudo (String pseudo)throws DALException;
 
 //public Retrait selectById (int noArticle)throws BusinessException;
