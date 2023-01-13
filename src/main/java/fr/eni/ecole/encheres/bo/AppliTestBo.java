@@ -8,9 +8,8 @@ public class AppliTestBo {
 	private static Utilisateur user = new Utilisateur(1, "Nom", "Prenom", "Pseudo","email", "0612151819", "rue", "35000", "mot de passe", null, 100, true);
 	private static Categorie categorie = new Categorie(2, "libelle");
 	private static Enchere enchere = new Enchere(5, LocalDate.of(1996,06,12), 1500, 5, 2);
-	private static Retrait retrait = new Retrait("rue", "paris", "35000", 5);
 	private static ArticleVendu article = new ArticleVendu(8, "pantoufle", "doux et resistant", LocalDate.of(1547, 04, 9), LocalDate.of(1547, 04, 9),5000, 10000, true,8 );
-	
+	private static Retrait retrait = new Retrait("rue", "paris", "35000", article);
 	public static void main(String[] args) {
 		
 		VerifUtilisateur(); 

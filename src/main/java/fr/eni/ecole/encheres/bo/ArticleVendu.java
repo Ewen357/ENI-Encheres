@@ -29,7 +29,8 @@ public class ArticleVendu implements Serializable {
 	private int miseAPrix;
 	private int prixVente;
 	private boolean etatVente;
-	private int noCategorie; 
+	private Categorie categorie; 
+	private Utilisateur utilisateur;
 	
 
 
@@ -66,7 +67,7 @@ public class ArticleVendu implements Serializable {
 		this.setMiseAPrix(miseAPrix);
 		this.setPrixVente(prixVente);
 		this.setEtatVente(etatVente);
-		this.setNoCategorie(noCategorie);
+		this.setNoCategorie(categorie);
 		
 		
 	}
@@ -75,6 +76,23 @@ public class ArticleVendu implements Serializable {
 
 	public int getNoArticle() {
 		return noArticle;
+	}
+
+	/**
+	* Getter pour utilisateur.
+	 * @return the utilisateur
+	
+	 */
+	public Utilisateur getUtilisateur() {
+		return utilisateur;
+	}
+
+	/**
+	 * Setter pour utilisateur.
+	 * @param utilisateur the utilisateur to set
+	 */
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
 	}
 
 	public String getNomArticle() {
@@ -105,8 +123,8 @@ public class ArticleVendu implements Serializable {
 		return etatVente;
 	}
 	
-	public int getNoCategorie() {
-		return noCategorie;
+	public Categorie getNoCategorie() {
+		return categorie;
 	}
 
 	
@@ -144,8 +162,8 @@ public class ArticleVendu implements Serializable {
 		this.etatVente = etatVente;
 	}
 	
-	public void setNoCategorie(int noCategorie) {
-		this.noCategorie = noCategorie;
+	public void setNoCategorie(Categorie categorie) {
+		this.categorie = categorie;
 	}
 	
 
@@ -169,7 +187,7 @@ public class ArticleVendu implements Serializable {
 		builder.append(", etatVente=");
 		builder.append(etatVente);
 		builder.append(", noCategorie=");
-		builder.append(noCategorie);
+		builder.append(categorie);
 		builder.append("]");
 		return builder.toString();
 	}
