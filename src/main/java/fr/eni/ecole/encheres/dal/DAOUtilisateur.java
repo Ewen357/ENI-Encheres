@@ -17,11 +17,9 @@ public Utilisateur selectById (int noUtilisateur)throws BusinessException;
 public Utilisateur updateById (Utilisateur utilisateur )throws BusinessException;
 
 public void deleteById (int noUtilisateur )throws BusinessException;
-<<<<<<< HEAD
 
 public List <Utilisateur> selectAll () throws BusinessException;
-=======
->>>>>>> branch 'master' of https://github.com/Ewen357/ENI-Encheres.git
+
 
 
 }

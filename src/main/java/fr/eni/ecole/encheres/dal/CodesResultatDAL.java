@@ -12,7 +12,6 @@ public abstract class CodesResultatDAL {
 	public static final int INSERT_UTILISATEUR_ECHEC=10001;
 	
 	public static final int SELECT_ALL_UTILISATEUR_ECHEC=10002;
-<<<<<<< HEAD
 
 	public static int SELECT_UTILISATEUR_BY_PSEUDO_ECHEC=10003;
 
@@ -22,23 +21,20 @@ public abstract class CodesResultatDAL {
 
 	public static int DELETE_UTILISATEUR_BY_ID_ECHEC=10006;
 
-	public static int INSERT_ARTICLE_VENDU_NULL;
+	
+	public static int INSERT_ARTICLE_VENDU_NULL =10010;
 
-	public static int INSERT_ARTICLE_VENDU_ECHEC;
+	public static int INSERT_ARTICLE_VENDU_ECHEC=10011;
 
-	public static int SELECT_ARTICLE_BY_ID_ECHEC;
+	public static int SELECT_ARTICLE_BY_ID_ECHEC=10012;
 
 	
-
+	public static final int INSERT_RETRAIT_NULL=10020;
 	
-=======
-	
-	public static final int INSERT_RETRAIT_NULL=10003;
-	
-	public static final int INSERT_RETRAIT_ECHEC=10004;
+	public static final int INSERT_RETRAIT_ECHEC=10021;
 
-	public static final int LECTURE_RETRAIT_ECHEC = 0;
+	public static final int LECTURE_RETRAIT_ECHEC =10022;
 
-	public static final int LECTURE_RETRAIT_NULL = 0;
->>>>>>> branch 'master' of https://github.com/Ewen357/ENI-Encheres.git
+	public static final int LECTURE_RETRAIT_NULL =10023;
+
 }
