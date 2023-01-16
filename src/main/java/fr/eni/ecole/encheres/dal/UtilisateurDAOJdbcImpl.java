@@ -57,7 +57,7 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 	
 	// Insertion de l'utilisateur en BDD avec inscription //
 	@Override
-	public void insertUtilisateur(Utilisateur utilisateur) throws DALException {
+	public void insertUtilisateur(Utilisateur utilisateur) throws BusinessException {
 		
 		try (Connection cnx = ConnectionProvider.getConnection())
 		{
@@ -85,7 +85,9 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new DALException ("Erreur d'insertion",e);
+			BusinessException businessException = new BusinessException();
+			businessException.ajouterErreur(CodesResultatDAL.INSERT_UTILISATEUR_ECHEC);
+			throw businessException;
 		}
 		
 	}
@@ -93,7 +95,7 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 	// selection de l'utilisateur en BDD avec son pseudo //
 
 	@Override
-	public Utilisateur selectByPseudo(String pseudo) throws DALException {
+	public Utilisateur selectByPseudo(String pseudo) throws BusinessException {
 		ResultSet rs = null;
 		Utilisateur utilisateur = null;
 
@@ -109,7 +111,9 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 						rs.getInt("credit"), rs.getBoolean("administrateur"));
 			}
 		} catch (SQLException e) {
-			throw new DALException("Erreur d'execution SelectByPseudo de UtilisateurDAOJdbcImpl", e);
+			BusinessException businessException = new BusinessException();
+			businessException.ajouterErreur(CodesResultatDAL.SELECT_UTILISATEUR_BY_PSEUDO_ECHEC);
+			throw businessException;
 
 		}
 		return utilisateur;
@@ -119,7 +123,7 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 	
 	// selection de l'utilisateur en BDD avec son numero d'utilisateur //
 	@Override
-	public Utilisateur selectById(int noUtilisateur) throws DALException {
+	public Utilisateur selectById(int noUtilisateur) throws BusinessException {
 		ResultSet rs = null;
 		Utilisateur utilisateur = null;
 		
@@ -143,7 +147,9 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 							rs.getBoolean("administrateur"));							
 				}
 		} catch (SQLException e) {
-			throw new DALException ("Erreur d'execution SelectById de UtilisateurDAOJdbcImpl",e);
+			BusinessException businessException = new BusinessException();
+			businessException.ajouterErreur(CodesResultatDAL.SELECT_UTILISATEUR_BY_ID_ECHEC);
+			throw businessException;
 			
 		}
 		return utilisateur;
@@ -151,7 +157,7 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 
 	// Mise a jour de l'utilisateur sur le profil //
 	@Override
-	public Utilisateur updateById(Utilisateur utilisateur) throws DALException {
+	public Utilisateur updateById(Utilisateur utilisateur) throws BusinessException {
 		try (Connection cnx = ConnectionProvider.getConnection())
 		{
 				PreparedStatement pstmt = cnx.prepareStatement(UPDATE_UTILISATEUR);
@@ -170,14 +176,17 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 				pstmt.executeUpdate();
 			}catch (SQLException e) {
 				e.printStackTrace();
-				throw new DALException ("Echec de la mise a jour",e);
-			}return utilisateur;
+				BusinessException businessException = new BusinessException();
+				businessException.ajouterErreur(CodesResultatDAL.UPDATE_UTILISATEUR_ECHEC);
+				throw businessException;
+			}
+		return utilisateur;
 		
 	}
 
 	// suppression des infos utilisateur via son numero//
 	@Override
-	public void deleteById(int noUtilisateur) throws DALException {
+	public void deleteById(int noUtilisateur) throws BusinessException {
 		try (Connection cnx = ConnectionProvider.getConnection())
 		{
 				PreparedStatement pstmt = cnx.prepareStatement(DELETE_UTILISATEUR_BY_ID);
@@ -186,7 +195,9 @@ public class UtilisateurDAOJdbcImpl implements DAOUtilisateur {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new DALException ("Echec de la suppression",e);
+			BusinessException businessException = new BusinessException();
+			businessException.ajouterErreur(CodesResultatDAL.DELETE_UTILISATEUR_BY_ID_ECHEC);
+			throw businessException;
 		}
 	}
 

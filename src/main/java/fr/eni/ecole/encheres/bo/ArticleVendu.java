@@ -1,6 +1,7 @@
 package fr.eni.ecole.encheres.bo;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
 
 
@@ -67,12 +68,43 @@ public class ArticleVendu implements Serializable {
 		this.setMiseAPrix(miseAPrix);
 		this.setPrixVente(prixVente);
 		this.setEtatVente(etatVente);
-		this.setNoCategorie(categorie);
+		this.setCategorie(categorie);
 		
 		
 	}
 
+	public ArticleVendu(int noArticle, String nomArticle, String description, LocalDate dateDebutEnchere,
+			LocalDate dateFinEnchere, int miseAPrix, int prixVente, boolean etatVente) {
+		super();
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEnchere = dateDebutEnchere;
+		this.dateFinEnchere = dateFinEnchere;
+		this.miseAPrix = miseAPrix;
+		this.prixVente = prixVente;
+		this.etatVente = etatVente;
+	}
+
+	public ArticleVendu(int noArticle, String nomArticle, String description, LocalDate dateDebutEnchere,
+			LocalDate dateFinEnchere, int miseAPrix, int prixVente, boolean etatVente, Categorie categorie,
+			Utilisateur utilisateur) {
+		super();
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEnchere = dateDebutEnchere;
+		this.dateFinEnchere = dateFinEnchere;
+		this.miseAPrix = miseAPrix;
+		this.prixVente = prixVente;
+		this.etatVente = etatVente;
+		this.categorie = categorie;
+		this.utilisateur = utilisateur;
+	}
+
 	// ******GETTERS******//
+
+	
 
 	public int getNoArticle() {
 		return noArticle;
@@ -123,7 +155,7 @@ public class ArticleVendu implements Serializable {
 		return etatVente;
 	}
 	
-	public Categorie getNoCategorie() {
+	public Categorie getCategorie() {
 		return categorie;
 	}
 
@@ -162,7 +194,7 @@ public class ArticleVendu implements Serializable {
 		this.etatVente = etatVente;
 	}
 	
-	public void setNoCategorie(Categorie categorie) {
+	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}
 	

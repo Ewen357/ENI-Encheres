@@ -1,17 +1,25 @@
 package fr.eni.ecole.encheres.dal;
 
+import java.util.List;
+
 import fr.eni.ecole.encheres.bo.ArticleVendu;
+import fr.eni.ecole.encheres.bo.Retrait;
+import fr.eni.ecole.encheres.exception.BusinessException;
 
 public interface DAOArticleVendu {
 
-	void insertArticleVendu ( ArticleVendu articleVendu) throws DALException;
+	public void insertArticleVendu( ArticleVendu articleVendu) throws BusinessException;
 
-	public ArticleVendu selectByPseudo (String pseudo)throws DALException;
+	public ArticleVendu selectById (int noArticle)throws BusinessException;
 
-	public ArticleVendu selectById (int noUtilisateur)throws DALException;
-		
-	public ArticleVendu updateById (ArticleVendu ArticleVendu )throws DALException;
+	public List<ArticleVendu> selectAll ()throws BusinessException;
+	
+	public List<ArticleVendu> selectByVendeur (int noUtilisateur)throws BusinessException;
 
-	public void deleteById (int noUtilisateur )throws DALException;
+	public ArticleVendu update (ArticleVendu ArticleVendu )throws BusinessException;
+
+	public void delete (int noUtilisateur )throws BusinessException;
+	
+	
 	
 }
