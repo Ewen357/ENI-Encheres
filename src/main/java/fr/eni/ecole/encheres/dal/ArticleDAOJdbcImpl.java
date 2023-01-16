@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import fr.eni.ecole.encheres.bo.ArticleVendu;
+import fr.eni.ecole.encheres.bo.Categorie;
 import fr.eni.ecole.encheres.bo.Retrait;
 import fr.eni.ecole.encheres.bo.Utilisateur;
 import fr.eni.ecole.encheres.exception.BusinessException;
@@ -14,11 +15,15 @@ import fr.eni.ecole.encheres.exception.BusinessException;
 public class ArticleDAOJdbcImpl implements DAOArticleVendu {
 
 	private static final String INSERT_ARTICLE_VENDU = "INSERT INTO ARTICLE_VENDU (nom_article, description, date_debut_encheres, date_fin_encheres, miseAPrix, prix_vente, etat_vente, no_utilisateur, no_categorie) VALUES (?,?,?,?,?,?,?,?,?)";
-	private static final String SELECT_ARTICLE_BY_ID = "SELECT * FROM ARTICLES_VENDU WHERE no_article= ? ";
+	private static final String SELECT_ARTICLE_BY_ID = "SELECT * FROM ARTICLE_VENDU INNER JOIN RETRAIT ON article.noarticle = retrait.noarticle WHERE ARTICLE_VENDU.noarticle = ? ";
 	private static final String SELECT_ARTICLE_BY_VENDEUR ="SELECT * FROM ARTICLE_VENDU WHERE no_utilisateur= ? ";
 	private static final String SELECT_ALL_ARTICLE_VENDU ="SELECT * FROM ARTICLE_VENDU";
 	private static final String UPDATE_ARTICLE_VENDU ="UPDATE ARTICLE_VENDU SET (nom_article= ?, description= ?, date_debut_encheres= ?, date_fin_encheres= ?, miseAPrix= ?, prix_vente= ?, etat_vente= ?, no_utilisateur= ?, no_categorie= ?)";
 	private static final String DELETE_ARTICLE_VENDU ="DELETE ARTICLE_VENDU WHERE noArticle=?";
+	
+	private static DAOUtilisateur utilisateurDAO = new UtilisateurDAOJdbcImpl();
+	private static DAOCategorie categorieDAO = new DAOCategorieJdbcImpl();
+	private static DAORetrait retraitDAO = new DAORetraitJdbcImpl();
 	
 	@Override
 	public void insertArticleVendu(ArticleVendu articleVendu) throws BusinessException  {
@@ -71,6 +76,7 @@ public class ArticleDAOJdbcImpl implements DAOArticleVendu {
 			ResultSet rs = pstmt.executeQuery();
 
 			if (rs.next()) {
+				
 				articleVendu = new ArticleVendu(rs.getInt("no_article"),
 						rs.getString("nom_article"),
 						rs.getString("description"),
@@ -79,15 +85,11 @@ public class ArticleDAOJdbcImpl implements DAOArticleVendu {
 						rs.getInt("miseAPrix"),
 						rs.getInt("prix_vente"),
 						rs.getBoolean("etat_vente")
-						rs.
-						articleVendu.setUtilisateur(utilisateur););	
+						
+						;	
 				
 			}
-			
-
-			
-
-		} catch (Exception e) {
+			} catch (Exception e) {
 			e.printStackTrace();
 			BusinessException businessException = new BusinessException();
 			businessException.ajouterErreur(CodesResultatDAL.SELECT_ARTICLE_BY_ID_ECHEC);
@@ -101,7 +103,7 @@ public class ArticleDAOJdbcImpl implements DAOArticleVendu {
 
 	@Override
 	public List<ArticleVendu> selectAll() throws BusinessException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -128,7 +130,8 @@ public class ArticleDAOJdbcImpl implements DAOArticleVendu {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	
-
+	
+	
+	
 }
