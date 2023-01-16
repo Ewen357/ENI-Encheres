@@ -12,6 +12,7 @@ public abstract class CodesResultatDAL {
 	public static final int INSERT_UTILISATEUR_ECHEC=10001;
 	
 	public static final int SELECT_ALL_UTILISATEUR_ECHEC=10002;
+<<<<<<< HEAD
 
 	public static int SELECT_UTILISATEUR_BY_PSEUDO_ECHEC=10003;
 
@@ -30,4 +31,14 @@ public abstract class CodesResultatDAL {
 	
 
 	
+=======
+	
+	public static final int INSERT_RETRAIT_NULL=10003;
+	
+	public static final int INSERT_RETRAIT_ECHEC=10004;
+
+	public static final int LECTURE_RETRAIT_ECHEC = 0;
+
+	public static final int LECTURE_RETRAIT_NULL = 0;
+>>>>>>> branch 'master' of https://github.com/Ewen357/ENI-Encheres.git
 }

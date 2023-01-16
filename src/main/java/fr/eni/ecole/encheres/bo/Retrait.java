@@ -20,7 +20,7 @@ public class Retrait implements Serializable{
 	private String rue;
 	private String ville;
 	private String codePostal;
-	private ArticleVendu articleVendu; 
+	private int no_article; 
 
 	public Retrait() {
 		super();
@@ -33,12 +33,12 @@ public class Retrait implements Serializable{
 	 * @param ville
 	 * @param codePostal
 	 */
-	public Retrait(String rue, String ville, String codePostal, ArticleVendu articleVendu) {
+	public Retrait(int no_article, String rue, String ville, String codePostal) {
 		super();
 		this.setRue(rue);
 		this.setVille(ville);
 		this.setCodePostal(codePostal);
-		this.setArticleVendu(articleVendu);
+		this.setNoArticle(no_article);
 	}
 
 	public String getRue() {
@@ -53,8 +53,8 @@ public class Retrait implements Serializable{
 		return codePostal;
 	}
 
-	public ArticleVendu getArticleVendu() {
-		return articleVendu;
+	public int getNoArticle() {
+		return no_article;
 	}
 
 
@@ -70,8 +70,8 @@ public class Retrait implements Serializable{
 		this.codePostal = codePostal;
 	}
 
-	public void setArticleVendu(ArticleVendu articleVendu) {
-		this.articleVendu = articleVendu;
+	public void setNoArticle(int no_article) {
+		this.no_article = no_article;
 	}
 
 
@@ -85,7 +85,7 @@ public class Retrait implements Serializable{
 		builder.append(", codePostal=");
 		builder.append(codePostal);
 		builder.append(", noArticle=");
-		builder.append(articleVendu);
+		builder.append("no_article");
 		builder.append("]");
 		return builder.toString();
 	}
